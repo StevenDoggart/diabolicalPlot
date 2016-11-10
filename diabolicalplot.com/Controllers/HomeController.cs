@@ -13,5 +13,7 @@ namespace diabolicalplot.com.Controllers
         public IActionResult Splash() => View();
 
         public IActionResult Error() => View();
+
+        public IActionResult Test() => View();
     }
 }

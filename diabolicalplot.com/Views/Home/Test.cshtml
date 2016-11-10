@@ -1,0 +1,21 @@
+﻿<h1>Look Up A Single Word:</h1>
+<form role="form">
+    <div class="form-group">
+        <input type="text" class="form-control" id="wordTextbox" placeholder="Word:">
+        <button type="button" class="btn btn-primary" id="wordButton">Look It Up</button>
+    </div>
+</form>
+
+<ul id="results"></ul>
+
+@section scripts {
+    <script>
+        $("#wordButton").click(() => {
+            $("#results").empty();
+            $.get("@Url.Content("~/")" + $("#wordTextbox").val())
+             .done((words) => $.each(words, (_, w) => $("#results").append("<li><h3>" + w + "</h3></li>")))
+        });
+    </script>
+}
+
+
